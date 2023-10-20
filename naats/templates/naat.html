@@ -135,7 +135,7 @@
             <div class="lyrics">
                 <li>
                     <strong>Title:</strong> {{ naat.tittle }}<br>
-                    <strong>Lyrics:</strong> <pre class="ly">{{ naat.lyrics| safe }}</pre>
+                    <strong>Lyrics:</strong> <pre class="ly">{{ naat.lyrics| safe|linebreaks }}</pre>
                 </li>
             </div>
             {% endfor %}

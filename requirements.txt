@@ -5,3 +5,5 @@ sqlparse
 tzdata
 Unidecode
 gunicorn
+psycopg2
+mysqlclient

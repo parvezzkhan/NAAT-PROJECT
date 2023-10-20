@@ -24,4 +24,3 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.naat,name='naat'),
 ]
-urlpatterns += static{ settings.STATIC_URL, document_root = settings.STATIC_URL}

@@ -9,6 +9,13 @@
     <link rel="icon" href="https://i.ibb.co/Lx8JHS0/g-removebg-preview.png" type="image/x-icon">
     <link rel="shortcut icon" href="https://i.ibb.co/Lx8JHS0/g-removebg-preview.png" type="image/x-icon">
     <style>
+        
+        
+       /* footer css */
+        
+        .cursive {
+            font-family: cursive;
+          }
         .home {
             margin-left: 100px;
         }
@@ -52,13 +59,14 @@
             }
     
             .srch {
-                width: 100%; /* Full width on mobile */
-                margin-left: 0;
+                width: 70%; /* Full width on mobile */
+                margin-left: 32px;
             }
     
             .btn {
-                width: 100%; /* Full width on mobile */
                 margin-top: 10px;
+                width: 50%; /* Full width on mobile */
+                margin-left: 79px;
             }
         }
         .lyrics{
@@ -83,12 +91,12 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg ">
-        <a class="navbar-brand" style="color:white; font-weight: bold;" href="/"><img src="https://i.ibb.co/Lx8JHS0/g-removebg-preview.png" height="50px;" width="80px" alt="">&nbsp;&nbsp;Naat-e-Hindi Lyrics</a>
+        <a class="navbar-brand cursive" style="color:white; font-weight: bold; " href="/"><img src="https://i.ibb.co/Lx8JHS0/g-removebg-preview.png" height="50px;" width="80px"  alt="">&nbsp;&nbsp;Naat-e-Hindi Lyrics</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse  id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <a class="nav-link" style="color:white; font-weight: bold;" href="/">Home <span class="sr-only"></span></a>
@@ -100,8 +108,8 @@
     <form id="searchForm" method="post" action="{% url 'naat' %}">
         {% csrf_token %}
         
-        <input class="srch" type="search" name="search">
-        <input class="btn" type="submit" value="Search">
+        <input class="srch" placeholder="Search Your Naat Here" type="search" name="search">
+        <input class="btn"  type="submit" value="Search">
     </form>
 
     {% if matching_naats %}
@@ -116,6 +124,14 @@
             {% endfor %}
         </ul>
     {% endif %}
+    <footer id="sticky-footer" style="background-color: #3085C3; position: fixed; bottom: 0; width: 100%;" class="py-4 text-white-50">
+        <div class="container text-center">
+          <small style="color: white;">Designed By ❤</small>
+          <a target="_blank" href="https://parvezkhan.vercel.app" style="font-size: 16px; font-weight: bold; color: white; text-decoration: none;">Parvez Khan</a>
+        </div>
+      </footer>
+      
+
 
     <script>
         document.getElementById("searchForm").addEventListener("submit", function(event) {

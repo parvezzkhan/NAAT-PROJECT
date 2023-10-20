@@ -4,3 +4,4 @@ django-richtextfield
 sqlparse
 tzdata
 Unidecode
+gunicorn

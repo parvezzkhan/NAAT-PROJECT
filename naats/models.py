@@ -1,9 +1,10 @@
 from django.db import models
-from ckeditor.fields import RichTextField
+
 
 class Naat(models.Model):
     tittle = models.CharField(max_length=100)
-    lyrics = RichTextField()
+    lyrics = models.TextField()
+
 
     def __str__(self):
         return self.tittle

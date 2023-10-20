@@ -1,0 +1,48 @@
+
+    .home {
+        margin-left: 10px; /* Reduce the margin for smaller screens */
+    }
+    .srch {
+        border-radius: 5px;
+        width: 100%; /* Make the input width 100% to fit the screen width */
+        max-width: 253px; /* Limit the input's maximum width */
+        height: 35px;
+        border-color: #3085C3;
+        border-style: solid;
+        margin-top: 10px; /* Adjust the top margin for smaller screens */
+    }
+    .btn {
+        width: 100%; /* Make the button width 100% to fit the screen width */
+        height: 37px;
+        border-radius: 25px;
+        background-color: #3085C3;
+        color: white;
+        margin-bottom: 10px; /* Adjust the bottom margin for smaller screens */
+    }
+    .btn:hover {
+        background-color: #3085C3;
+        color: white;
+    }
+    .navbar {
+        background-color: #3085C3;
+    }
+    body {
+        background-color: #FAF2D3;
+    }
+
+    /* Media query for screens with a maximum width of 600px (typical mobile screens) */
+    @media (max-width: 600px) {
+        .srch {
+            width: 80%; /* Adjust the input width for smaller screens */
+            max-width: none; /* Remove the maximum width limit */
+            margin-left: 10px; /* Adjust the left margin for smaller screens */
+        }
+        .btn {
+            width: 80%; /* Adjust the button width for smaller screens */
+            margin-left: 10px; /* Adjust the left margin for smaller screens */
+        }
+        .navbar {
+            padding: 10px; /* Increase padding for the navbar */
+        }
+    }
+

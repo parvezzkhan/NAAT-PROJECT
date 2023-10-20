@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naat-e-Hndi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="icon" href="https://i.ibb.co/Lx8JHS0/g-removebg-preview.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://i.ibb.co/Lx8JHS0/g-removebg-preview.png" type="image/x-icon">
+    <style>
+        .home {
+            margin-left: 100px;
+        }
+    
+        .srch {
+            border-radius: 5px;
+            width: 253px;
+            height: 35px;
+            border-color: #3085C3;
+            margin-left: 550px;
+            border-style: solid;
+            margin-top: 20px;
+        }
+    
+        .btn {
+            width: 95px;
+            height: 37px;
+            border-radius: 25px;
+            background-color: #3085C3;
+            color: white;
+            margin-bottom: 9px;
+        }
+    
+        .btn:hover {
+            background-color: #3085C3;
+            color: white;
+        }
+    
+        .navbar {
+            background-color: #3085C3;
+        }
+    
+        body {
+            background-color: #FAF2D3;
+        }
+    
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            .home {
+                margin-left: 20px; /* Adjust for mobile screens */
+            }
+    
+            .srch {
+                width: 100%; /* Full width on mobile */
+                margin-left: 0;
+            }
+    
+            .btn {
+                width: 100%; /* Full width on mobile */
+                margin-top: 10px;
+            }
+        }
+        .lyrics{
+            display: flex;
+            justify-content: center;
+        }
+        .ly{
+            font-size: 17px;;
+        }
+        @media (max-width: 767px) {
+    .lyrics {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ly {
+        font-size: 14px; /* Adjust the font size for mobile */
+    }
+}
+    </style>
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg ">
+        <a class="navbar-brand" style="color:white; font-weight: bold;" href="/"><img src="https://i.ibb.co/Lx8JHS0/g-removebg-preview.png" height="50px;" width="80px" alt="">&nbsp;&nbsp;Naat-e-Hindi Lyrics</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" style="color:white; font-weight: bold;" href="/">Home <span class="sr-only"></span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    
+    <form id="searchForm" method="post" action="{% url 'naat' %}">
+        {% csrf_token %}
+        
+        <input class="srch" type="search" name="search">
+        <input class="btn" type="submit" value="Search">
+    </form>
+
+    {% if matching_naats %}
+        <ul>
+            {% for naat in matching_naats %}
+            <div class="lyrics">
+                <li>
+                    <strong>Title:</strong> {{ naat.tittle }}<br>
+                    <strong>Lyrics:</strong> <pre class="ly">{{ naat.lyrics| safe }}</pre>
+                </li>
+            </div>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", function(event) {
+            // Get the value of the search input
+            var searchInput = document.querySelector(".srch");
+    
+            if (searchInput.value.trim() === "") {
+                // If the search input is blank, prevent the form from submitting
+                event.preventDefault();
+                // Optionally, you can display an error message or perform other actions
+                alert("Please enter a search query.");
+            }
+        });
+    </script>
+    
+</body>
+</html>

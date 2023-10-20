@@ -15,6 +15,6 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'naatp.settings')
 
 application = get_wsgi_application()
 
-app = application
+
 
 

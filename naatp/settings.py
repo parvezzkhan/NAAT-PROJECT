@@ -77,22 +77,22 @@ WSGI_APPLICATION = 'naatp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'lyrics_1aiv',
-#         'USER' : 'parvezzkhan',
-#         'PASSWORD' : 'eken0XAEw8CuYOLrjfw1csJ07QzEn0dE',
-#         'HOST' : 'dpg-ckp7257kc2qc73diahc0-a',
-#         'PORT' : '5432',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'lyrics_1aiv',
+        'USER' : 'parvezzkhan',
+        'PASSWORD' : 'eken0XAEw8CuYOLrjfw1csJ07QzEn0dE',
+        'HOST' : 'dpg-ckp7257kc2qc73diahc0-a.oregon-postgres.render.com',
+        'PORT' : '5432'
+    }
+}
 
 
 
